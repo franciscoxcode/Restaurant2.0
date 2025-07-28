@@ -7,13 +7,17 @@
 import SwiftUI
 
 struct RestaurantListView: View {
+    
+    let orderViewModel: OrderViewModel
+    
     var body: some View {
-        List(restaurants){ restaurant in 
-            Text(restaurant.name)
+        List(restaurants){ restaurant in
+            NavigationLink(restaurant.name, destination: MenuView(restaurant: restaurant, orderViewModel: orderViewModel))
         }
+        .navigationTitle("Restaurants")
     }
 }
 
 #Preview {
-    RestaurantListView()
+    RestaurantListView(orderViewModel: OrderViewModel())
 }

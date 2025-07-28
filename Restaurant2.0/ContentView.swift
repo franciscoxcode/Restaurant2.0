@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var orderViewModel: OrderViewModel
+    @StateObject private var orderViewModel = OrderViewModel()
     
     var body: some View {
-       
-    }
+        NavigationStack {
+            RestaurantListView(orderViewModel: orderViewModel)
+            }
+        }
 }
 
 #Preview {

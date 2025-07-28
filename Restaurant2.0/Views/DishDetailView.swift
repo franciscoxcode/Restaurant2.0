@@ -31,3 +31,9 @@ struct DishDetailView: View {
     }
 }
 
+#Preview {
+    DishDetailView(
+        dish: Dish(name: "Sopa", description: "Rica", price: 10.0),
+        orderViewModel: OrderViewModel()
+    )
+}
