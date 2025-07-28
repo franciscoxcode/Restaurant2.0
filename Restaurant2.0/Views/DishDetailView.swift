@@ -10,6 +10,7 @@ import SwiftUI
 struct DishDetailView: View {
     
     let dish: Dish
+    @ObservedObject var orderViewModel: OrderViewModel
     
     var body: some View {
         VStack {
@@ -17,7 +18,7 @@ struct DishDetailView: View {
             Text(String(format: "$%.2f", dish.price))
             Text(dish.description)
             Button(action: {
-                
+                orderViewModel.addItem(dish)
             }){
                 Text("Add to order")
                     .bold()
@@ -30,6 +31,3 @@ struct DishDetailView: View {
     }
 }
 
-#Preview {
-    DishDetailView(dish: Dish(name: "Tacos", description: "delicioso", price: 30))
-}
