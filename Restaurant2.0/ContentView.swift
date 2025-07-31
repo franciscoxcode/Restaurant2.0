@@ -12,11 +12,13 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            RestaurantListView(orderViewModel: orderViewModel)
+            RestaurantListView()
+                .environmentObject(orderViewModel)
             }
         }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(OrderViewModel())
 }

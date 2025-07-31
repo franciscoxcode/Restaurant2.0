@@ -13,5 +13,7 @@ class OrderViewModel: ObservableObject {
     func addItem(_ dish: Dish){
         orderItems.append(dish)
         priceItems += dish.price
+        print(orderItems)
+        print(priceItems)
     }
 }

@@ -9,11 +9,12 @@ import SwiftUI
 
 struct MenuView: View {
     let restaurant: Restaurant 
-    let orderViewModel: OrderViewModel
+    @EnvironmentObject var orderViewModel: OrderViewModel
+
     
     var body: some View {
         List(restaurant.dishes){ dish in
-            NavigationLink(dish.name, destination: DishDetailView(dish: dish, orderViewModel: orderViewModel))
+            NavigationLink(dish.name, destination: DishDetailView(dish: dish))
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct DishDetailView: View {
     
     let dish: Dish
-    @ObservedObject var orderViewModel: OrderViewModel
+    @EnvironmentObject var orderViewModel: OrderViewModel
     
     var body: some View {
         VStack {
@@ -33,7 +33,6 @@ struct DishDetailView: View {
 
 #Preview {
     DishDetailView(
-        dish: Dish(name: "Sopa", description: "Rica", price: 10.0),
-        orderViewModel: OrderViewModel()
+        dish: Dish(name: "Sopa", description: "Rica", price: 10.0)
     )
 }

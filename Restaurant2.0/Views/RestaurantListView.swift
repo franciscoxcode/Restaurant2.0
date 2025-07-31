@@ -8,16 +8,16 @@ import SwiftUI
 
 struct RestaurantListView: View {
     
-    let orderViewModel: OrderViewModel
+    @EnvironmentObject var orderViewModel: OrderViewModel
     
     var body: some View {
         List(restaurants){ restaurant in
-            NavigationLink(restaurant.name, destination: MenuView(restaurant: restaurant, orderViewModel: orderViewModel))
+            NavigationLink(restaurant.name, destination: MenuView(restaurant: restaurant))
         }
         .navigationTitle("Restaurants")
     }
 }
 
 #Preview {
-    RestaurantListView(orderViewModel: OrderViewModel())
+    RestaurantListView()
 }
